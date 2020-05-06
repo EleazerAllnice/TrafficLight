@@ -132,18 +132,60 @@ bool Roadway::isNextMoveIntersection(Vehicle* vehicle, int row, int col)
     else return false;
 
 }
+bool Roadway::isNextOccupied(Vehicle* vehicle)
+{
+  if(vehicle->getVehicleOriginalDirection() == Direction::north)
+  {
+      int rowDirection = -1;
+      int colDirection = 0;
+      row  = row + rowDirection;
+      col = col + colDirection;
+  }
 
+  //SOUTH
+  else if(vehicle->getVehicleOriginalDirection() == Direction::south)
+  {
+    int rowDirection = 1;
+    int colDirection = 0;
+    row  = row + rowDirection;
+    col = col + colDirection;
+  }
 
-void Roadway::moveCars(int time)
+  //EAST
+  else if(vehicle->getVehicleOriginalDirection() == Direction::east)
+  {
+    int rowDirection = 0;
+    int colDirection = 1;
+    row  = row + rowDirection;
+    col = col + colDirection;
+  }
+
+  //WEST
+  else
+  {
+    int rowDirection = 0;
+    int colDirection = -1;
+    row  = row + rowDirection;
+    col = col + colDirection;
+  }
+
+  if(lanes[row][col] == nullptr)
+  {
+    return false
+  }
+  return true
+}
+
+void Roadway::moveCars()
 {
   for(int i = 0; i < carList.size(); i++)
   {
+    if(carlist.at(i).get)
 
 
   }
 
 }
-
 
 // Traffic light
 TrafficLight Roadway::getNSlight()
@@ -170,7 +212,7 @@ std::vector<VehicleBase*> Roadway::getSouthbound()
   std::vector<VehicleBase*> southbound;
   for(int i = 0; i < this->row; i++)
   {
-    
+
     southbound.push_back(lanes[0+i][col/2]);
   }
   return southbound;
