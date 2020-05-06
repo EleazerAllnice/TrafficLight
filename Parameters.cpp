@@ -102,9 +102,11 @@ void Parameters::readInputFile(std::string filename)
 	std::ifstream infile(filename); // to open file reading
 	std::string line; //to declare the line being used to read
 
-	while(getline(infile, line))
-	{
-		maximum_simulated_time = stoi(line);
+		getline(infile, line);
+		std::cout << "line: " << line << std::endl;
+		size_t last_index = line.find_last_not_of(" ");
+    std::string result = line.substr(last_index + 1);
+		maximum_simulated_time = stoi(result);
 		getline(infile, line);
 		number_of_sections_before_intersection = stoi(line);
 		getline(infile, line);
@@ -139,14 +141,9 @@ void Parameters::readInputFile(std::string filename)
 		proportion_right_turn_trucks = stod(line);
 		getline(infile, line);
 		proportion_left_turn_trucks = stod(line);
-	}
 		infile.close();
 
 }
 
-int main()
-{
-	return 0;
-}
 
 #endif

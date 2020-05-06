@@ -1,5 +1,5 @@
 EXECS = Simulation
-OBJS = VehicleBase.o Vehicle.o TrafficLight.o Roadway.o random.o Parameters.o 
+OBJS = VehicleBase.o Vehicle.o TrafficLight.o Simulation.o Roadway.o random.o Parameters.o Animator.o main.o
 
 #### use next two lines for Mac
 CC = clang++

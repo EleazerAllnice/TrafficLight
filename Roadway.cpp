@@ -155,5 +155,42 @@ TrafficLight Roadway::getEWlight()
     return ewLight;
 }
 
+std::vector<VehicleBase*> Roadway::getNorthbound()
+{
+  std::vector<VehicleBase*> northbound;
+  for(int i = 1; i < this->row + 1; i++)
+  {
+    northbound.push_back(lanes[row-i][col/2+1]);
+  }
+  return northbound;
+}
+std::vector<VehicleBase*> Roadway::getSouthbound()
+{
+  std::vector<VehicleBase*> southbound;
+  for(int i = 1; i < this->row + 1; i++)
+  {
+    southbound.push_back(lanes[row+i][col/2]);
+  }
+  return southbound;
+}
+std::vector<VehicleBase*> Roadway::getWestbound()
+{
+  std::vector<VehicleBase*> westbound;
+  for(int i = 1; i < this->row + 1; i++)
+  {
+    westbound.push_back(lanes[row/2+1][col+i]);
+  }
+  return westbound;
+}
+std::vector<VehicleBase*> Roadway::getEastbound()
+{
+  std::vector<VehicleBase*> eastbound;
+  for(int i = 1; i < this->row + 1; i++)
+  {
+    eastbound.push_back(lanes[row/2][col-i]);
+  }
+  return eastbound;
+}
+
 
 #endif

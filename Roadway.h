@@ -31,6 +31,13 @@ class Roadway
     TrafficLight getNSlight();
     TrafficLight getEWlight();
     bool isNextMoveIntersection(Vehicle* vehicle, int row, int col);
+    std::vector<VehicleBase*> getNorthbound();
+    std::vector<VehicleBase*> getSouthbound();
+    std::vector<VehicleBase*> getWestbound();
+    std::vector<VehicleBase*> getEastbound();
+
+
+
 
 
 
