@@ -1,0 +1,23 @@
+Class   : CMSC 240
+Group   : Bravo
+Members : Eleazer Allnice Afotey
+          Shana Bellamy
+          Joel Tabapssi Fokwa
+
+
+Design: This simulation represents a traffic intersection. Vehicles are represented as pointers
+        on the roadway. When a vehicle moves, the pointers are updated to the next destination in the
+        roadway if the move is possible.
+
+        Roadway is represented as Vector of vectors --> of type vehicle pointers. similar to  a 2D-Array.
+
+        TrafficLight is represented as a class. It controls the movement of cars based on color.
+
+        Simulation class controls the entire simulation of the project. When the code is run,
+        simulation controls the entire simulation of the project by calling necessary classes and methods from
+        specified classes and updating data accordingly.
+
+
+Compile: make
+
+Run : ./Simulation [input file] [initial seed]
