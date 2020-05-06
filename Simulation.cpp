@@ -29,19 +29,26 @@ void Simulation::run()
 	{
 		std::cout<< "In the for loop" << std::endl;
 		std::vector<VehicleBase*> northbound = road.getNorthbound();
+		std::cout<<"called getNorttbound()" << std::endl;
 		std::vector<VehicleBase*> southbound = road.getSouthbound();
+		std::cout<<"called getSouthbound()" << std::endl;
 		std::vector<VehicleBase*> eastbound = road.getEastbound();
+		std::cout<<"called getEastbound()" << std::endl;
 		std::vector<VehicleBase*> westbound = road.getWestbound();
+		std::cout<<"called getWestbound()" << std::endl;
+
 		animate.setVehiclesWestbound(westbound);
 		animate.setVehiclesEastbound(eastbound);
 		animate.setVehiclesSouthbound(southbound);
 		animate.setVehiclesNorthbound(eastbound);
 
+        std::cout << "finished setVehiclesNorthbound" << std::endl;
 		road.moveCars(i);
 		t1.update(i);
 		t2.update(i);
 
 		animate.draw(i);
+		std::cout << "finished draw()" << std::endl;
 	}
 
 }

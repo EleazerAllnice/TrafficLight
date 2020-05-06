@@ -8,7 +8,8 @@ int main(int argc, char* argv[]) //command-line arguments are the the intial see
 {
 	std::cout<< "Time: " << Parameters::getMaximumSimulatedTime() << std::endl;
 	//all animation stuff happens in main()
-	Parameters::readInputFile(argv[2]);
+	Parameters::readInputFile(argv[1]);
+	std::cout << argv[1] << std::endl;
 	std::cout<< "Time: " << Parameters::getMaximumSimulatedTime() << std::endl;
 	Random ram = Random(argc);
 	Simulation::run();

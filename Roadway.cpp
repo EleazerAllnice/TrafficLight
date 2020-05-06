@@ -163,29 +163,31 @@ std::vector<VehicleBase*> Roadway::getNorthbound()
     northbound.push_back(lanes[row-i][col/2+1]);
   }
   return northbound;
+
 }
 std::vector<VehicleBase*> Roadway::getSouthbound()
 {
   std::vector<VehicleBase*> southbound;
-  for(int i = 1; i < this->row + 1; i++)
+  for(int i = 0; i < this->row; i++)
   {
-    southbound.push_back(lanes[row+i][col/2]);
+    
+    southbound.push_back(lanes[0+i][col/2]);
   }
   return southbound;
 }
 std::vector<VehicleBase*> Roadway::getWestbound()
 {
   std::vector<VehicleBase*> westbound;
-  for(int i = 1; i < this->row + 1; i++)
+  for(int i = 0; i < this->row; i++)
   {
-    westbound.push_back(lanes[row/2+1][col+i]);
+    westbound.push_back(lanes[row/2+1][0+i]);
   }
   return westbound;
 }
 std::vector<VehicleBase*> Roadway::getEastbound()
 {
   std::vector<VehicleBase*> eastbound;
-  for(int i = 1; i < this->row + 1; i++)
+  for(int i = 1; i < this->row+1; i++)
   {
     eastbound.push_back(lanes[row/2][col-i]);
   }
